@@ -21,10 +21,15 @@ Create a Docker image for code-server. This repo has Dockerfiles for Java and Ja
 }
 ```
 **image** - Docker image containing code-server and any necessary build tools/language runtimes
+
 **repos** - List of URLs to git repos containing student exercises
+
 **student_count** - Number of containers to create.
+
 **setup_instructor** - Create an instructor container with access to files in all student containers
+
 **pwd** - Password to access VS code in browser using HTTP Basic Authentication.
+
 
 ## code-server-config.yaml
 ```yaml
