@@ -1,2 +1,4 @@
+config
 workspace
 .DS_Store
+.vscode

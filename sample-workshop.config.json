@@ -1,0 +1,10 @@
+{
+    "image": "code-server-java",
+    "repos": [
+        "https://github.com/turleylabs/Workshop-TDD-FizzBuzz.git", 
+        "https://github.com/turleylabs/Workshop-Functional-Java.git"
+    ],
+    "student_count": 2,
+    "setup_instructor": true,
+    "pwd": "abc123"
+}
