@@ -11,6 +11,5 @@ RUN npm install
 USER 1000
 
 RUN code-server --install-extension dbaeumer.vscode-eslint
-RUN code-server --install-extension visualstudioexptteam.vscodeintellicode
 
 
