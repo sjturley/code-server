@@ -10,6 +10,8 @@ RUN npm install
 
 USER 1000
 
+ENV SHELL=/bin/bash
+
 RUN code-server --install-extension dbaeumer.vscode-eslint
 
 
