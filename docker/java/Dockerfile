@@ -10,4 +10,6 @@ RUN ln -s "${GRADLE_HOME}/bin/gradle" /usr/bin/gradle
     
 USER 1000
 
+ENV SHELL=/bin/bash
+
 RUN code-server --install-extension vscjava.vscode-java-pack
