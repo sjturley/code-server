@@ -53,11 +53,15 @@ def setup_students(data):
     setup_repos(project_directory, data['repos'])
     start_code_server(data['image'], port, project_directory, data['pwd'])
 
+def build_image(data):
+  image_type = data['image'].split('-')[-1]
+  os.system("docker build -t %s docker/%s/" % (data['image'],image_type))
+
 
 with open('workshop.config.json') as f:
+  os.system("git pull origin master")
   data = json.load(f)
   clean_volumes()
+  build_image(data)
   setup_instructor(data)
   setup_students(data)
-
-
