@@ -8,9 +8,9 @@ COPY --from=gradle-base /opt/gradle /opt/gradle
 ENV GRADLE_HOME=/opt/gradle
 RUN ln -s "${GRADLE_HOME}/bin/gradle" /usr/bin/gradle
     
-RUN  printf "server \n{ \nlisten 5000; \nroot /home/coder/project; \nautoindex on; \n}" > /etc/nginx/sites-available/nginx-site
-RUN ln -s /etc/nginx/sites-available/nginx-site /etc/nginx/sites-enabled/nginx-site
-RUN service nginx restart
+# RUN  printf "server \n{ \nlisten 5000; \nroot /home/coder/project; \nautoindex on; \n}" > /etc/nginx/sites-available/nginx-site
+# RUN ln -s /etc/nginx/sites-available/nginx-site /etc/nginx/sites-enabled/nginx-site
+# RUN service nginx restart
     
 USER 1000
 
