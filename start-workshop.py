@@ -53,10 +53,18 @@ def setup_students(data):
     setup_repos(project_directory, data['repos'])
     start_code_server(data['image'], port, project_directory, data['pwd'])
 
+def get_image_type(data):
+  return data['image'].split('-')[-1]
+
 def build_image(data):
   image_type = data['image'].split('-')[-1]
-  os.system("docker build -t %s docker/%s/" % (data['image'],image_type))
+  os.system("docker build -t %s docker/%s/" % (data['image'],get_image_type(data)))
 
+def optionally_run_npm(data):
+  if get_image_type(data) in ['js', 'cypress']:
+    shutil.copy('do_npm_install.sh', PROJECT_ROOT)
+    os.chdir(PROJECT_ROOT)
+    os.system('bash %s/do_npm_install.sh' % PROJECT_ROOT)
 
 with open('workshop.config.json') as f:
   os.system("git pull origin master")
@@ -65,3 +73,5 @@ with open('workshop.config.json') as f:
   build_image(data)
   setup_instructor(data)
   setup_students(data)
+  optionally_run_npm(data)
+
