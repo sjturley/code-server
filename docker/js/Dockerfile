@@ -6,7 +6,7 @@ RUN apt-get install -y curl \
   && curl -sL https://deb.nodesource.com/setup_16.x | bash - \
   && apt-get install -y nodejs 
 
-RUN npm install
+RUN npm install -g npm@7.16.0
 
 USER 1000
 
