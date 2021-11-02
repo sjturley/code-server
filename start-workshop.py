@@ -61,7 +61,7 @@ def build_image(data):
   os.system("docker build -t %s docker/%s/" % (data['image'],get_image_type(data)))
 
 def optionally_run_npm(data):
-  if get_image_type(data) in ['js', 'cypress']:
+  if get_image_type(data) in ['js', 'cypress', 'aws']:
     shutil.copy('do_npm_install.sh', PROJECT_ROOT)
     os.chdir(PROJECT_ROOT)
     os.system('bash %s/do_npm_install.sh' % PROJECT_ROOT)
